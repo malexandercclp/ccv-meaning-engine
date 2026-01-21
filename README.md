@@ -308,8 +308,7 @@ Links and citations available upon request.
 This is an early-stage research project. If you're interested in collaborating or have questions:
 
 - Open an issue on GitHub
-- Reach out via email (add your contact info here)
-- Check out my Substack for updates (add link when ready)
+- Reach out via email (malexandercclp@gmail.com)
 
 ### Development Setup
 
