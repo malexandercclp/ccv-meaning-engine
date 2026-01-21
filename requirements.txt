@@ -1,0 +1,22 @@
+# CCV System Requirements
+# =======================
+
+# Core dependencies
+networkx>=3.0
+numpy>=1.24.0
+
+# LLM integration
+requests>=2.28.0
+
+# Web interface
+streamlit>=1.30.0
+plotly>=5.18.0
+pandas>=2.0.0
+
+# Data handling
+pyyaml>=6.0
+
+# Development dependencies (optional)
+# pytest>=7.0.0
+# black>=23.0.0
+# mypy>=1.0.0
