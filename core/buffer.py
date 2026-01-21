@@ -759,9 +759,14 @@ class RecurrenceBuffer:
         if create_backup and len(self.graph.nodes()) > 0:
             self.create_backup("pre_clear")
         
+        # Explicitly clear the existing graph first
+        # This ensures all internal state is cleaned up
+        self.graph.clear()
+        
+        # Now create a completely fresh MultiDiGraph
         self.graph = nx.MultiDiGraph()
         self._modified = True
-        self.save_buffer()
+        self.save_buffer(force=True)  # Force save to ensure pickle is written
         logger.info("Buffer cleared")
     
     # ========================================================================
