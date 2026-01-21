@@ -251,7 +251,18 @@ def main():
             
             with col_confirm:
                 if st.button("🗑️ Yes, Clear Everything", use_container_width=True, type="primary"):
-                    processor.buffer.clear(create_backup=True)
+                    # Get reference to old processor
+                    old_processor = processor
+                    
+                    # Clear the buffer (creates backup)
+                    old_processor.buffer.clear(create_backup=True)
+                    
+                    # Explicitly delete old processor to ensure cleanup
+                    del old_processor
+                    
+                    # Create a completely new processor instance with fresh buffer
+                    st.session_state.processor = CCVProcessor()
+                    
                     # Also clear session state history
                     if 'history' in st.session_state:
                         st.session_state.history = []
